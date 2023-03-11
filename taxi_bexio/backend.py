@@ -40,8 +40,8 @@ class BexioBackend(BaseBackend):
         contact_sub_id = None
 
         if r.status_code == 200:
-            contact_id = int(response['contact_id'])
-            contact_sub_id = int(response['contact_sub_id'])
+            contact_id = response['contact_id']
+            contact_sub_id = response['contact_sub_id']
 
         r = requests.post(
             f"https://{self.hostname}/2.0/timesheet",
